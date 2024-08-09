@@ -37,6 +37,7 @@ while true; do
                 if [[ $y == $x ]]; then
                         while read container; do
                                 docker stop $container
+                                docker logs $container > $container.logs
                         done < $network_line
                 fi
 
